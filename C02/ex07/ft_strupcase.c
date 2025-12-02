@@ -1,25 +1,27 @@
-char    *ft_strupcase(char *str)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ssakoglu <ssakoglu@student.42istanbul.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/25 13:03:23 by ssakoglu          #+#    #+#             */
+/*   Updated: 2025/11/25 13:03:23 by ssakoglu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char	*ft_strupcase(char *str)
 {
-    int i;
-    i = 0;
-    while (str[i] != '\0')
-    {
-        if (('a' <= str[i]) && (str[i] <= 'z'))
-            str[i] = str[i] - 32;
-            i++;
-        if (('A' <= str[i]) && (str[i] <= 'Z'))
-            i++;
-    }
-    if (str[i] == '\0')
-    return (str);
-}
+	int	i;
 
-#include<stdio.h>
-
-int main()
-{
-    char src1[] = "asd";
-
-	printf("%s", ft_strupcase(src1));
-	return (0);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if ('a' <= str[i] && str[i] <= 'z')
+			str[i] -= 32;
+		else
+			i++;
+	}
+	str[i] = '\0';
+	return (str);
 }

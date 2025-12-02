@@ -1,25 +1,26 @@
-int ft_str_is_lowercase(char *str)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ssakoglu <ssakoglu@student.42istanbul.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/25 13:02:57 by ssakoglu          #+#    #+#             */
+/*   Updated: 2025/11/25 13:02:57 by ssakoglu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_str_is_lowercase(char *str)
 {
-    int i;
-    i = 0;
-    while (str[i] != '\0')
-    {
-        if (('a' <= str[i]) && (str[i] <= 'z'))
-            i++;
-        else 
-            return (0);
+	int	i;
 
-    }
-    if (str[i] == '\0')
-        return (1);
-}
-
-#include<stdio.h>
-
-int main()
-{
-	char src1[] = "ipt";
-
-	printf("%d", ft_str_is_lowercase(src1));
-	return (0);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (!('a' <= str[i] && str[i] <= 'z'))
+			return (0);
+		else
+			i++;
+	}
+	return (1);
 }

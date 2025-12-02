@@ -1,24 +1,27 @@
-char    *ft_strlowcase(char *str)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ssakoglu <ssakoglu@student.42istanbul.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/25 13:03:29 by ssakoglu          #+#    #+#             */
+/*   Updated: 2025/11/25 13:03:29 by ssakoglu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char	*ft_strlowcase(char *str)
 {
-    int i;
-    i = 0;
-    while (str[i] != '\0')
-    {
-        if (('a' <= str[i]) && (str[i] <= 'z'))
-            i++;
-        if (('A' <= str[i]) && (str[i] <= 'Z'))
-            str[i] = str[i] + 32;
-            i++;
-    }
-    return (str);
-}
+	int	i;
 
-#include<stdio.h>
-
-int main()
-{
-    char src1[] = "AsjdsFTg2372";
-
-	printf("%s", ft_strlowcase(src1));
-	return (0);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if ('A' <= str[i] && str[i] <= 'Z')
+			str[i] += 32;
+		else
+			i++;
+	}
+	str[i] = '\0';
+	return (str);
 }

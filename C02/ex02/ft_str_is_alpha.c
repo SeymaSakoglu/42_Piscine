@@ -1,27 +1,27 @@
-int    ft_str_is_alpha(char *str)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ssakoglu <ssakoglu@student.42istanbul.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/25 13:02:34 by ssakoglu          #+#    #+#             */
+/*   Updated: 2025/11/25 13:02:34 by ssakoglu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_str_is_alpha(char *str)
 {
-    int i;
-    i = 0;
-    while (str[i] != '\0')
-    {
-        if (('a' <= str[i]) && (str[i] <= 'z'))
-            i++;
-        else if (('A' <= str[i]) && (str[i] <= 'Z'))
-            i++;
-        else 
-            return (0);
+	int	i;
 
-    }
-    if (str[i] == '\0')
-        return (1);
-}
-
-#include<stdio.h>
-
-int main()
-{
-	char src1[] = "ADGipt";
-
-	printf("%d", ft_str_is_alpha(src1));
-	return (0);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (!(('A' <= str[i] && str[i] <= 'Z')
+				|| ('a' <= str[i] && str[i] <= 'z')))
+			return (0);
+		else
+			i++;
+	}
+	return (1);
 }
